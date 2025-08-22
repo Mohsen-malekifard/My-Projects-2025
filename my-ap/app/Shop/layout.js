@@ -1,5 +1,4 @@
 import { CartProvider } from "./context/CartContext";
-import "./globals.css";
 import NavBar from "./components/NavBar";
 
 

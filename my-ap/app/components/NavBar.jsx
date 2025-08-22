@@ -66,6 +66,15 @@ export default function NavBar() {
               Todo App
             </Link>
           </li>
+          <li>
+            <Link
+              href="/Shop"
+              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
+              onClick={() => setOpen(false)}
+            >
+              My Shop
+            </Link>
+          </li>
         </ul>
       </div>
     </>
