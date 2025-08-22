@@ -9,7 +9,7 @@ const projects = [
     tags: ["React", "Context", "Tailwind"],
   },
   {
-    href: "/shop",
+    href: "/Shop",
     title: "فروشگاه Next.js",
     desc: "جستجو، جزئیات محصول، سبد خرید و قیمت کل—همه با ساختار app و استایل حرفه‌ای.",
     tags: ["Next.js", "App Router", "Tailwind"],
