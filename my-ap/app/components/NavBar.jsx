@@ -75,6 +75,15 @@ export default function NavBar() {
               My Shop
             </Link>
           </li>
+          <li>
+            <Link
+              href="/Shop-2"
+              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
+              onClick={() => setOpen(false)}
+            >
+              My Shop 2
+            </Link>
+          </li>
         </ul>
       </div>
     </>

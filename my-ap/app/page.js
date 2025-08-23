@@ -15,6 +15,12 @@ const projects = [
     tags: ["Next.js", "App Router", "Tailwind"],
   },
   {
+    href: "/Shop-2",
+    title: "فروشگاه Next.js",
+    desc: "جستجو، جزئیات محصول، سبد خرید و قیمت کل—همه با ساختار app و استایل حرفه‌ای.",
+    tags: ["Next.js", "App Router", "Tailwind"],
+  },
+  {
     href: "/calculator",
     title: "ماشین‌حساب",
     desc: "کامپوننت‌های ساده و مینیمال، بدون کتابخانه اضافه، فقط منطق تمیز.",
