@@ -16,7 +16,7 @@ const projects = [
   },
   {
     href: "/Shop-2",
-    title: "فروشگاه Next.js",
+    title: "فروشگاه Next.js 2",
     desc: "جستجو، جزئیات محصول، سبد خرید و قیمت کل—همه با ساختار app و استایل حرفه‌ای.",
     tags: ["Next.js", "App Router", "Tailwind"],
   },

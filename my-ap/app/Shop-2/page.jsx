@@ -13,7 +13,7 @@ export default function Home() {
         <>
             <h1>Welcome to my Shop</h1>
             <SearchBar/>
-            {filter.map(product => (
+            {products.map(product => (
                 <ProductCard key = {product.id} product = {product} />
             ))}
         </>
