@@ -84,6 +84,15 @@ export default function NavBar() {
               My Shop 2
             </Link>
           </li>
+          <li>
+            <Link
+              href="https://example-mongodb-apps.vercel.app/"
+              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
+              onClick={() => setOpen(false)}
+            >
+              Register & Login System
+            </Link>
+          </li>
         </ul>
       </div>
     </>
