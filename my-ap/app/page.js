@@ -25,25 +25,7 @@ const projects = [
     title: "فروشگاه Next.js 2",
     desc: "جستجو، جزئیات محصول، سبد خرید و قیمت کل—همه با ساختار app و استایل حرفه‌ای.",
     tags: ["Next.js", "App Router", "Tailwind"],
-  },
-  {
-    href: "/calculator",
-    title: "ماشین‌حساب",
-    desc: "کامپوننت‌های ساده و مینیمال، بدون کتابخانه اضافه، فقط منطق تمیز.",
-    tags: ["React", "Hooks"],
-  },
-  {
-    href: "/snake",
-    title: "بازی مار",
-    desc: "پیاده‌سازی سبک و واکنش‌گرا؛ تمرکز روی تجربه و کیبورد.",
-    tags: ["React", "Game Logic"],
-  },
-  {
-    href: "/apis",
-    title: "APIهای تستی",
-    desc: "لیست endpointهای تستی برای توسعه سریع و ماک دیتا در پروژه‌ها.",
-    tags: ["Axios", "Mock Data"],
-  },
+  }
 ];
 
 export default function Home() {
