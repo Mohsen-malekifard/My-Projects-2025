@@ -72,7 +72,7 @@ export default function NavBar() {
               className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
               onClick={() => setOpen(false)}
             >
-              My Shop
+              My Shop Site
             </Link>
           </li>
           <li>
@@ -81,7 +81,16 @@ export default function NavBar() {
               className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
               onClick={() => setOpen(false)}
             >
-              My Shop 2
+              My Shop Site 2
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/Blog"
+              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
+              onClick={() => setOpen(false)}
+            >
+              My Blog Site
             </Link>
           </li>
           <li>
