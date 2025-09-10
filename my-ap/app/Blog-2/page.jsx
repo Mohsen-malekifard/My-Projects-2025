@@ -1,4 +1,4 @@
-import fs from "fs";
+const fs = require('fs')
 
 export default function Blog2() {
   const filePath = "./App.html";
