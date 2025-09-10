@@ -1,7 +1,6 @@
 import fs from "fs";
-import path from "path";
 
-export default function HtmlContent() {
+export default function Blog2() {
   const filePath = "./App.html";
   const htmlContent = fs.readFileSync(filePath, "utf8");
 
