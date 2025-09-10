@@ -1,246 +1,0 @@
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>وب‌سایت نمونه — Tailwind + JavaScript</title>
-  <meta name="description" content="یک قالب تک‌فایلی با HTML، TailwindCSS و JavaScript" />
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* کوچک: برای بهتر شدن فونت در برخی مرورگرها */
-    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800 transition-colors duration-200">
-  <!-- NAVBAR -->
-  <header class="bg-white/80 backdrop-blur sticky top-0 z-30 shadow-sm">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <div class="h-10 w-10 rounded-lg bg-gradient-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-bold">M</div>
-        <span class="font-semibold">SiteSample</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-6">
-        <a href="#home" class="hover:text-indigo-600">خانه</a>
-        <a href="#features" class="hover:text-indigo-600">قابلیت‌ها</a>
-        <a href="#gallery" class="hover:text-indigo-600">گالری</a>
-        <a href="#contact" class="hover:text-indigo-600">تماس</a>
-      </nav>
-
-      <div class="flex items-center gap-3">
-        <button id="themeToggle" title="تغییر تم" class="p-2 rounded-md hover:bg-gray-100">
-          🌓
-        </button>
-        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100">☰</button>
-      </div>
-    </div>
-
-    <!-- Mobile menu -->
-    <div id="mobileMenu" class="md:hidden hidden border-t">
-      <div class="px-4 py-3 flex flex-col gap-2">
-        <a href="#home" class="block">خانه</a>
-        <a href="#features" class="block">قابلیت‌ها</a>
-        <a href="#gallery" class="block">گالری</a>
-        <a href="#contact" class="block">تماس</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <main id="home" class="max-w-5xl mx-auto px-4 py-12">
-    <section class="grid md:grid-cols-2 gap-8 items-center">
-      <div>
-        <h1 class="text-4xl font-extrabold mb-4">یک قالب واکنش‌گرا با Tailwind و JS</h1>
-        <p class="mb-6 text-gray-600">قابل استفاده به‌عنوان صفحه فرود، نمونه‌کار، یا شروع یک پروژه. کد تمیز، دسترس‌پذیر و قابل گسترش.</p>
-        <div class="flex gap-3">
-          <a href="#features" class="px-4 py-2 bg-indigo-600 text-white rounded-md shadow hover:opacity-95">شروع کنید</a>
-          <a href="#gallery" class="px-4 py-2 border rounded-md">مشاهده گالری</a>
-        </div>
-
-        <div class="mt-6 text-sm text-gray-500">حالت فعلی: <span id="modeLabel">روشن</span></div>
-      </div>
-
-      <div class="rounded-xl overflow-hidden shadow-lg">
-        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="hero" class="w-full h-64 object-cover"/>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features" class="mt-16">
-      <h2 class="text-2xl font-bold mb-6">قابلیت‌ها</h2>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="p-4 bg-white rounded-lg shadow-sm">
-          <h3 class="font-semibold">کاملاً ریسپانسیو</h3>
-          <p class="text-sm text-gray-500">طراحی شده برای موبایل و دسکتاپ با Tailwind utility-first.</p>
-        </div>
-        <div class="p-4 bg-white rounded-lg shadow-sm">
-          <h3 class="font-semibold">تعامل با جاوااسکریپت</h3>
-          <p class="text-sm text-gray-500">منو موبایل، مودال گالری، ذخیره‌سازی لوکال و اعتبارسنجی فرم.</p>
-        </div>
-        <div class="p-4 bg-white rounded-lg shadow-sm">
-          <h3 class="font-semibold">قابل توسعه</h3>
-          <p class="text-sm text-gray-500">کد ساده و جداشده — به راحتی می‌توانید بخش‌ها را حذف یا اضافه کنید.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- GALLERY -->
-    <section id="gallery" class="mt-12">
-      <h2 class="text-2xl font-bold mb-4">گالری</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-        <img tabindex="0" src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="img1" class="cursor-pointer rounded-lg shadow-sm gallery-item" />
-        <img tabindex="0" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="img2" class="cursor-pointer rounded-lg shadow-sm gallery-item" />
-        <img tabindex="0" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="img3" class="cursor-pointer rounded-lg shadow-sm gallery-item" />
-        <img tabindex="0" src="https://images.unsplash.com/photo-1526406915892-9f6a4f6f3b8f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="img4" class="cursor-pointer rounded-lg shadow-sm gallery-item" />
-        <img tabindex="0" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="img5" class="cursor-pointer rounded-lg shadow-sm gallery-item" />
-        <img tabindex="0" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="img6" class="cursor-pointer rounded-lg shadow-sm gallery-item" />
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="mt-12 mb-20">
-      <h2 class="text-2xl font-bold mb-4">تماس با ما</h2>
-      <form id="contactForm" class="grid sm:grid-cols-2 gap-4 bg-white p-6 rounded-lg shadow-sm">
-        <div>
-          <label class="block text-sm mb-1">نام</label>
-          <input id="name" required class="w-full border px-3 py-2 rounded-md" placeholder="نام شما">
-        </div>
-        <div>
-          <label class="block text-sm mb-1">ایمیل</label>
-          <input id="email" type="email" required class="w-full border px-3 py-2 rounded-md" placeholder="you@example.com">
-        </div>
-        <div class="sm:col-span-2">
-          <label class="block text-sm mb-1">پیام</label>
-          <textarea id="message" required class="w-full border px-3 py-2 rounded-md h-28" placeholder="پیام شما..."></textarea>
-        </div>
-        <div class="sm:col-span-2 flex items-center justify-between">
-          <div class="text-sm text-gray-500">فرم به‌صورت محلی ذخیره می‌شود</div>
-          <div class="flex gap-3">
-            <button type="button" id="saveBtn" class="px-4 py-2 border rounded-md">ذخیره</button>
-            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md">ارسال</button>
-          </div>
-        </div>
-      </form>
-
-      <div id="formMsg" class="mt-4 text-sm"></div>
-    </section>
-  </main>
-
-  <!-- GALLERY MODAL -->
-  <div id="modal" class="fixed inset-0 bg-black/60 hidden items-center justify-center z-50">
-    <div class="max-w-3xl w-[90%]">
-      <button id="closeModal" class="text-white text-xl mb-2 float-left">✕</button>
-      <img id="modalImg" src="" alt="preview" class="w-full rounded-lg shadow-lg" />
-    </div>
-  </div>
-
-  <footer class="bg-white border-t py-6 mt-8">
-    <div class="max-w-5xl mx-auto px-4 text-center text-sm text-gray-500">© 2025 SiteSample — ساخته شده با ❤️ و Tailwind</div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // DOM refs
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const themeToggle = document.getElementById('themeToggle');
-    const modeLabel = document.getElementById('modeLabel');
-
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    // Theme (light/dark) simple toggle with localStorage
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        document.body.classList.add('bg-gray-900','text-gray-100');
-        modeLabel.textContent = 'تاریک';
-      } else {
-        document.documentElement.classList.remove('dark');
-        document.body.classList.remove('bg-gray-900','text-gray-100');
-        modeLabel.textContent = 'روشن';
-      }
-      localStorage.setItem('siteTheme', theme);
-    }
-
-    const storedTheme = localStorage.getItem('siteTheme') || 'light';
-    applyTheme(storedTheme);
-
-    themeToggle.addEventListener('click', () => {
-      const next = (localStorage.getItem('siteTheme') === 'dark') ? 'light' : 'dark';
-      applyTheme(next);
-    });
-
-    // Gallery modal
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImg');
-    const closeModal = document.getElementById('closeModal');
-    document.querySelectorAll('.gallery-item').forEach(img => {
-      img.addEventListener('click', () => {
-        modalImg.src = img.src;
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-      });
-      img.addEventListener('keypress', (e) => { if (e.key === 'Enter') img.click(); });
-    });
-    closeModal.addEventListener('click', () => { modal.classList.add('hidden'); modal.classList.remove('flex'); });
-    modal.addEventListener('click', (e) => { if (e.target === modal) { modal.classList.add('hidden'); modal.classList.remove('flex'); } });
-
-    // Contact form: simple validation + local save
-    const contactForm = document.getElementById('contactForm');
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email');
-    const messageInput = document.getElementById('message');
-    const saveBtn = document.getElementById('saveBtn');
-    const formMsg = document.getElementById('formMsg');
-
-    function validateEmail(email) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    // load saved
-    const saved = JSON.parse(localStorage.getItem('contactDraft') || 'null');
-    if (saved) {
-      nameInput.value = saved.name || '';
-      emailInput.value = saved.email || '';
-      messageInput.value = saved.message || '';
-      formMsg.textContent = 'پیش‌نویس بارگذاری شد.';
-    }
-
-    saveBtn.addEventListener('click', () => {
-      const draft = { name: nameInput.value, email: emailInput.value, message: messageInput.value, at: new Date().toISOString() };
-      localStorage.setItem('contactDraft', JSON.stringify(draft));
-      formMsg.textContent = 'پیش‌نویس ذخیره شد.';
-    });
-
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = nameInput.value.trim();
-      const email = emailInput.value.trim();
-      const message = messageInput.value.trim();
-
-      if (!name || !email || !message) {
-        formMsg.textContent = 'لطفاً همه فیلدها را تکمیل کنید.';
-        return;
-      }
-      if (!validateEmail(email)) {
-        formMsg.textContent = 'آدرس ایمیل نامعتبر است.';
-        return;
-      }
-
-      // fake send: در پروژه واقعی اینجا باید درخواست fetch به سرور ارسال شود.
-      formMsg.textContent = 'در حال ارسال...';
-      setTimeout(() => {
-        formMsg.textContent = 'پیام با موفقیت ارسال شد — (شبیه‌سازی)';
-        localStorage.removeItem('contactDraft');
-        contactForm.reset();
-      }, 800);
-    });
-
-    // Accessibility small enhancement: focus visible
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Tab') document.body.classList.add('focus-outline');
-    });
-  </script>
-</body>
-</html>
