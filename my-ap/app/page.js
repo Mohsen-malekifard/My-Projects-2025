@@ -43,10 +43,10 @@ const projects = [
 export default function Home() {
   return (
     <main className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-black text-white">
-      {/* پرتوهای نور پس‌زمینه */}
-      <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-green-500/30 blur-3xl" />
-      <div className="pointer-events-none absolute top-20 right-[-200px] h-[500px] w-[500px] rounded-full bg-purple-500/30 blur-[160px]" />
-      <div className="pointer-events-none absolute bottom-[-150px] left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-blue-500/30 blur-[120px]" />
+      {/* پرتوهای نور انیمیشنی */}
+      <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-green-500/30 blur-3xl animate-pulse-slow" />
+      <div className="pointer-events-none absolute top-20 right-[-200px] h-[500px] w-[500px] rounded-full bg-purple-500/30 blur-[160px] animate-float" />
+      <div className="pointer-events-none absolute bottom-[-150px] left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-blue-500/30 blur-[120px] animate-pulse-slow delay-2000" />
 
       <section className="relative mx-auto max-w-6xl px-6 py-20">
         {/* هدر */}
@@ -123,6 +123,25 @@ export default function Home() {
           </Link>
         </footer>
       </section>
+
+      {/* keyframes */}
+      <style jsx global>{`
+        @keyframes float {
+          0% { transform: translateY(0px) scale(1); }
+          50% { transform: translateY(-30px) scale(1.1); }
+          100% { transform: translateY(0px) scale(1); }
+        }
+        @keyframes pulse-slow {
+          0%, 100% { opacity: 0.4; transform: scale(1); }
+          50% { opacity: 0.7; transform: scale(1.15); }
+        }
+        .animate-float {
+          animation: float 12s ease-in-out infinite;
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 10s ease-in-out infinite;
+        }
+      `}</style>
     </main>
   );
 }
