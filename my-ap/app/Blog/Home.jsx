@@ -37,7 +37,7 @@ export default function HomePage() {
 
       {/* Blog Preview Section */}
       <section className="mt-16">
-        <h2 className="text-3xl font-bold text-gray-900 text-center mb-8">
+        <h2 className="text-3xl font-bold text-gray-600 text-center mb-8">
           Latest Articles
         </h2>
         <BlogCard />
