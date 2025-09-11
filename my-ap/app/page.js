@@ -44,9 +44,11 @@ export default function Home() {
   return (
     <main className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-black text-white">
       {/* پرتوهای نور انیمیشنی */}
-      <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-green-500/30 blur-3xl animate-pulse-slow" />
-      <div className="pointer-events-none absolute top-20 right-[-200px] h-[500px] w-[500px] rounded-full bg-purple-500/30 blur-[160px] animate-float" />
-      <div className="pointer-events-none absolute bottom-[-150px] left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-blue-500/30 blur-[120px] animate-pulse-slow delay-2000" />
+      <div className="pointer-events-none absolute -top-60 -left-60 h-[600px] w-[600px] rounded-full bg-green-500/25 blur-[180px] animate-pulse-strong" />
+      <div className="pointer-events-none absolute top-40 -right-60 h-[700px] w-[700px] rounded-full bg-purple-500/25 blur-[200px] animate-float-strong" />
+      <div className="pointer-events-none absolute bottom-[-250px] left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-blue-500/25 blur-[180px] animate-pulse-strong delay-2000" />
+      {/* نور زرد وسط */}
+      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-yellow-400/20 blur-[160px] animate-glow" />
 
       <section className="relative mx-auto max-w-6xl px-6 py-20">
         {/* هدر */}
@@ -54,7 +56,7 @@ export default function Home() {
           <span className="inline-block rounded-full border border-white/20 px-4 py-1 text-xs font-medium tracking-wide text-white/70 backdrop-blur-sm">
             مجموعه پروژه‌ها
           </span>
-          <h1 className="mt-6 text-5xl font-extrabold tracking-tight bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(0,255,255,0.4)]">
+          <h1 className="mt-6 text-5xl font-extrabold tracking-tight bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,255,255,0.5)]">
             کارهای من — تکنولوژی مدرن
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base leading-7 text-white/70">
@@ -77,13 +79,13 @@ export default function Home() {
             <li key={p.href}>
               <Link
                 href={p.href}
-                className="group block rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(0,255,255,0.25)] hover:border-cyan-400/40"
+                className="group block rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(255,255,0,0.25)] hover:border-yellow-400/40"
               >
                 <div className="flex items-start justify-between">
-                  <h3 className="text-lg font-semibold tracking-tight text-white group-hover:text-cyan-300">
+                  <h3 className="text-lg font-semibold tracking-tight text-white group-hover:text-yellow-300">
                     {p.title}
                   </h3>
-                  <span className="mt-0.5 inline-block rounded-full bg-cyan-400/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-cyan-300">
+                  <span className="mt-0.5 inline-block rounded-full bg-yellow-400/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-yellow-300">
                     View
                   </span>
                 </div>
@@ -94,14 +96,14 @@ export default function Home() {
                   {p.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full bg-gradient-to-r from-cyan-400/20 to-purple-400/20 px-3 py-1 text-[11px] font-medium text-cyan-200"
+                      className="rounded-full bg-gradient-to-r from-yellow-400/20 to-purple-400/20 px-3 py-1 text-[11px] font-medium text-yellow-200"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent opacity-75" />
-                <div className="mt-3 text-sm font-medium text-cyan-300 underline-offset-4 group-hover:underline">
+                <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent opacity-75" />
+                <div className="mt-3 text-sm font-medium text-yellow-300 underline-offset-4 group-hover:underline">
                   رفتن به پروژه →
                 </div>
               </Link>
@@ -117,7 +119,7 @@ export default function Home() {
           </div>
           <Link
             href="/"
-            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-medium text-white/80 backdrop-blur-sm hover:border-cyan-400/40 hover:text-cyan-300"
+            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-medium text-white/80 backdrop-blur-sm hover:border-yellow-400/40 hover:text-yellow-300"
           >
             صفحه اصلی
           </Link>
@@ -126,20 +128,27 @@ export default function Home() {
 
       {/* keyframes */}
       <style jsx global>{`
-        @keyframes float {
+        @keyframes float-strong {
           0% { transform: translateY(0px) scale(1); }
-          50% { transform: translateY(-30px) scale(1.1); }
+          50% { transform: translateY(-120px) scale(1.25); }
           100% { transform: translateY(0px) scale(1); }
         }
-        @keyframes pulse-slow {
-          0%, 100% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 0.7; transform: scale(1.15); }
+        @keyframes pulse-strong {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.4); }
         }
-        .animate-float {
-          animation: float 12s ease-in-out infinite;
+        @keyframes glow {
+          0%, 100% { opacity: 0.25; transform: scale(1); }
+          50% { opacity: 0.7; transform: scale(1.3); }
         }
-        .animate-pulse-slow {
-          animation: pulse-slow 10s ease-in-out infinite;
+        .animate-float-strong {
+          animation: float-strong 15s ease-in-out infinite;
+        }
+        .animate-pulse-strong {
+          animation: pulse-strong 12s ease-in-out infinite;
+        }
+        .animate-glow {
+          animation: glow 8s ease-in-out infinite;
         }
       `}</style>
     </main>
