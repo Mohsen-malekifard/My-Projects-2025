@@ -7,7 +7,7 @@ export default function NavBar() {
   const totalCart = cart.reduce((sum, item) => sum + item.qty, 0);
 
   return (
-    <nav className="bg-white shadow-md p-4 sticky top-0">
+    <nav className="bg-white shadow-md p-4 top-0">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
         {/* Logo / Brand */}
         <Link href="/Shop" className="text-2xl font-bold text-gray-800">
