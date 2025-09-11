@@ -12,7 +12,7 @@ export default function HtmlViewer() {
     <div className="p-5">
       <h2 className="text-xl font-bold mb-4">📄 محتوای HTML:</h2>
       <div
-        className="border p-4 rounded bg-white"
+        className="border p-4 rounded"
         dangerouslySetInnerHTML={{ __html: htmlContent }}
       />
     </div>
