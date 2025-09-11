@@ -31,6 +31,12 @@ const projects = [
     title: "سایت مقاله Next.js",
     desc: "سایت مقاله با صفحه جزییات هر مقاله، صفحه مقاله ها و صفحه درباره ما",
     tags: ["Next.js", "App Router", "Tailwind"],
+  },
+  {
+    href: "/Blog-2",
+    title: "سایت مقاله Next.js 2",
+    desc: " قسمت فرم ارتباط با ما، حالت تاریک و روشن و منوی ریسپانسیو",
+    tags: ["HTML", "TailwindCss", "JavaScript"],
   }
 ];
 
