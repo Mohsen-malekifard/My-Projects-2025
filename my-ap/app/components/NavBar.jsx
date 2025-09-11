@@ -1,118 +1,144 @@
-"use client"
-import { useState } from "react";
+"use client";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-      {/* Navbar */}
-      <nav className="flex items-center justify-between bg-blue-600 text-white px-5 py-3 shadow">
-        <h1 className="text-lg font-bold">My Project</h1>
-        <button
-          onClick={() => setOpen(true)}
-          className="p-2 rounded-lg hover:bg-blue-700 transition"
+    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-xl bg-white/10 border-b border-white/10 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+      <div className="mx-auto max-w-6xl flex items-center justify-between px-6 py-4">
+        {/* لوگو */}
+        <Link
+          href="/"
+          className="text-xl font-bold bg-gradient-to-r from-green-400 via-yellow-300 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,255,150,0.8)] hover:scale-105 transition-transform"
         >
-          {/* آیکون همبرگری */}
-          <div className="space-y-1">
-            <span className="block w-6 h-0.5 bg-white"></span>
-            <span className="block w-6 h-0.5 bg-white"></span>
-            <span className="block w-6 h-0.5 bg-white"></span>
-          </div>
+          Mohsen.dev
+        </Link>
+
+        {/* دکمه منو (برای موبایل) */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="text-white/80 md:hidden focus:outline-none"
+        >
+          Menu
         </button>
-      </nav>
 
-      {/* Overlay با بلور + تیرگی */}
-      {open && (
-        <div
-          onClick={() => setOpen(false)}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 transition"
-        ></div>
-      )}
-
-      {/* منوی همبرگری */}
-      <div
-        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${
-          open ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <div className="flex items-center justify-between p-4 border-b">
-          <h2 className="text-lg font-semibold text-gray-800">Menu</h2>
-          <button
-            onClick={() => setOpen(false)}
-            className="text-gray-600 hover:text-gray-900"
-          >
-            ✕
-          </button>
-        </div>
-
-        <ul className="p-4 space-y-4">
+        {/* منو دسکتاپ */}
+        <ul className="hidden md:flex items-center gap-6 text-white/80">
           <li>
-            <Link
-              href="/"
-              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
-              onClick={() => setOpen(false)}
-            >
+            <Link href="/" className="hover:text-yellow-300 transition-colors">
               Home
             </Link>
           </li>
           <li>
-            <Link
-              href="/TodoApp"
-              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
-              onClick={() => setOpen(false)}
-            >
+            <Link href="/TodoApp" className="hover:text-yellow-300 transition-colors">
               Todo App
             </Link>
           </li>
           <li>
             <Link
               href="https://example-mongodb-apps.vercel.app/"
-              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
-              onClick={() => setOpen(false)}
+              className="hover:text-yellow-300 transition-colors"
+              target="_blank"
             >
               Register & Login System
             </Link>
           </li>
           <li>
-            <Link
-              href="/Shop"
-              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
-              onClick={() => setOpen(false)}
-            >
+            <Link href="/Shop" className="hover:text-yellow-300 transition-colors">
               My Shop Site
             </Link>
           </li>
           <li>
-            <Link
-              href="/Shop-2"
-              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
-              onClick={() => setOpen(false)}
-            >
+            <Link href="/Shop-2" className="hover:text-yellow-300 transition-colors">
               My Shop Site 2
             </Link>
           </li>
           <li>
-            <Link
-              href="/Blog"
-              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
-              onClick={() => setOpen(false)}
-            >
+            <Link href="/Blog" className="hover:text-yellow-300 transition-colors">
               My Blog Site
             </Link>
           </li>
           <li>
-            <Link
-              href="/Blog-2"
-              className="block px-3 py-2 rounded font-medium text-gray-800 hover:bg-gray-100"
-              onClick={() => setOpen(false)}
-            >
+            <Link href="/Blog-2" className="hover:text-yellow-300 transition-colors">
               My Blog Site 2
             </Link>
           </li>
         </ul>
       </div>
-    </>
+
+      {/* منو موبایل */}
+      {open && (
+        <div className="md:hidden bg-black/60 backdrop-blur-xl">
+          <ul className="p-4 space-y-4">
+            <li>
+              <Link
+                href="/"
+                className="block px-3 py-2 rounded font-medium text-white hover:bg-yellow-400/20 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/TodoApp"
+                className="block px-3 py-2 rounded font-medium text-white hover:bg-yellow-400/20 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Todo App
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="https://example-mongodb-apps.vercel.app/"
+                className="block px-3 py-2 rounded font-medium text-white hover:bg-yellow-400/20 transition-colors"
+                onClick={() => setOpen(false)}
+                target="_blank"
+              >
+                Register & Login System
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Shop"
+                className="block px-3 py-2 rounded font-medium text-white hover:bg-yellow-400/20 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                My Shop Site
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Shop-2"
+                className="block px-3 py-2 rounded font-medium text-white hover:bg-yellow-400/20 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                My Shop Site 2
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Blog"
+                className="block px-3 py-2 rounded font-medium text-white hover:bg-yellow-400/20 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                My Blog Site
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Blog-2"
+                className="block px-3 py-2 rounded font-medium text-white hover:bg-yellow-400/20 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                My Blog Site 2
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
+    </nav>
   );
 }
