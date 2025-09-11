@@ -42,26 +42,27 @@ const projects = [
 
 export default function Home() {
   return (
-    <main className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600">
-      {/* پس‌زمینه‌های رنگی */}
-      <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-white/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-28 -right-20 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+    <main className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-black text-white">
+      {/* پرتوهای نور پس‌زمینه */}
+      <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-green-500/30 blur-3xl" />
+      <div className="pointer-events-none absolute top-20 right-[-200px] h-[500px] w-[500px] rounded-full bg-purple-500/30 blur-[160px]" />
+      <div className="pointer-events-none absolute bottom-[-150px] left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-blue-500/30 blur-[120px]" />
 
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="relative mx-auto max-w-6xl px-6 py-20">
         {/* هدر */}
-        <div className="mb-10 text-center text-white">
-          <span className="inline-block rounded-full border border-white/30 px-4 py-1 text-xs font-medium tracking-wide backdrop-blur-sm">
+        <div className="mb-14 text-center">
+          <span className="inline-block rounded-full border border-white/20 px-4 py-1 text-xs font-medium tracking-wide text-white/70 backdrop-blur-sm">
             مجموعه پروژه‌ها
           </span>
-          <h1 className="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl drop-shadow-lg">
-            کارهای من — شفاف، مدرن، مینیمال
+          <h1 className="mt-6 text-5xl font-extrabold tracking-tight bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_25px_rgba(0,255,255,0.4)]">
+            کارهای من — تکنولوژی مدرن
           </h1>
-          <p className="mt-4 max-w-2xl mx-auto text-base leading-7 text-white/80">
-            همه‌چیز با تمرکز روی تجربه‌ی کاربری و طراحی مدرن.  
+          <p className="mt-4 max-w-2xl mx-auto text-base leading-7 text-white/70">
+            طراحی تاریک و نئونی با تمرکز روی تجربه‌ی کاربری.  
             تمامی کدها در ریپازیتوری{" "}
             <a
               href="https://github.com/Mohsen-malekifard/My-projects-2025"
-              className="font-semibold text-yellow-300 hover:underline"
+              className="font-semibold text-green-400 hover:underline"
               target="_blank"
             >
               GitHub.com/Mohsen-malekifard/My-projects-2025
@@ -71,36 +72,36 @@ export default function Home() {
         </div>
 
         {/* لیست پروژه‌ها */}
-        <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <li key={p.href}>
               <Link
                 href={p.href}
-                className="group block rounded-2xl border border-white/20 bg-white/10 p-6 shadow-lg backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:border-white/30"
+                className="group block rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_25px_rgba(0,255,255,0.25)] hover:border-cyan-400/40"
               >
                 <div className="flex items-start justify-between">
-                  <h3 className="text-lg font-semibold tracking-tight text-white group-hover:text-yellow-300">
+                  <h3 className="text-lg font-semibold tracking-tight text-white group-hover:text-cyan-300">
                     {p.title}
                   </h3>
-                  <span className="mt-0.5 inline-block rounded-full bg-white/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white/80">
+                  <span className="mt-0.5 inline-block rounded-full bg-cyan-400/20 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-cyan-300">
                     View
                   </span>
                 </div>
-                <p className="mt-3 line-clamp-3 text-sm leading-6 text-white/80">
+                <p className="mt-3 line-clamp-3 text-sm leading-6 text-white/70">
                   {p.desc}
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {p.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full bg-white/20 px-3 py-1 text-[11px] font-medium text-white/90"
+                      className="rounded-full bg-gradient-to-r from-cyan-400/20 to-purple-400/20 px-3 py-1 text-[11px] font-medium text-cyan-200"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="mt-5 h-px w-full bg-white/20" />
-                <div className="mt-3 text-sm font-medium text-yellow-300 underline-offset-4 group-hover:underline">
+                <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent opacity-75" />
+                <div className="mt-3 text-sm font-medium text-cyan-300 underline-offset-4 group-hover:underline">
                   رفتن به پروژه →
                 </div>
               </Link>
@@ -109,14 +110,14 @@ export default function Home() {
         </ul>
 
         {/* فوتر */}
-        <footer className="mt-14 flex items-center justify-between text-xs text-white/80">
+        <footer className="mt-16 flex items-center justify-between text-xs text-white/60">
           <div className="tracking-wide">
-            ساخته‌شده با <span className="font-semibold">Next.js</span> و{" "}
-            <span className="font-semibold">TailwindCSS</span>
+            ساخته‌شده با <span className="font-semibold text-green-400">Next.js</span> و{" "}
+            <span className="font-semibold text-purple-400">TailwindCSS</span>
           </div>
           <Link
             href="/"
-            className="rounded-lg border border-white/20 bg-white/10 px-3 py-1.5 font-medium text-white/90 backdrop-blur-md hover:bg-white/20"
+            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-medium text-white/80 backdrop-blur-sm hover:border-cyan-400/40 hover:text-cyan-300"
           >
             صفحه اصلی
           </Link>
