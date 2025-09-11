@@ -81,7 +81,7 @@ export default function Home() {
             کارهای من — تکنولوژی نئونی
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base leading-7 text-white/70">
-            طراحی **Dark + Neon** با شدت بالا و افکت‌های داینامیک.  
+          .  
             تمامی کدها در ریپازیتوری{" "}
             <a
               href="https://github.com/Mohsen-malekifard/My-projects-2025"
