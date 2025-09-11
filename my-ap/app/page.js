@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const projects = [
@@ -41,14 +42,34 @@ const projects = [
 ];
 
 export default function Home() {
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setPos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <main className="relative min-h-[calc(100vh-4rem)] overflow-hidden bg-black text-white">
-      {/* پرتوهای نور انیمیشنی */}
-      <div className="pointer-events-none absolute -top-60 -left-60 h-[600px] w-[600px] rounded-full bg-green-500/25 blur-[180px] animate-pulse-strong" />
-      <div className="pointer-events-none absolute top-40 -right-60 h-[700px] w-[700px] rounded-full bg-purple-500/25 blur-[200px] animate-float-strong" />
-      <div className="pointer-events-none absolute bottom-[-250px] left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-blue-500/25 blur-[180px] animate-pulse-strong delay-2000" />
+      {/* پرتوهای ثابت */}
+      <div className="pointer-events-none absolute -top-72 -left-72 h-[800px] w-[800px] rounded-full bg-green-500/40 blur-[200px] animate-pulse-strong" />
+      <div className="pointer-events-none absolute top-40 -right-72 h-[900px] w-[900px] rounded-full bg-purple-500/40 blur-[220px] animate-float-strong" />
+      <div className="pointer-events-none absolute bottom-[-300px] left-1/2 -translate-x-1/2 h-[700px] w-[700px] rounded-full bg-blue-500/40 blur-[200px] animate-pulse-strong delay-2000" />
       {/* نور زرد وسط */}
-      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 h-[500px] w-[500px] rounded-full bg-yellow-400/20 blur-[160px] animate-glow" />
+      <div className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 h-[600px] w-[600px] rounded-full bg-yellow-400/30 blur-[220px] animate-glow" />
+      {/* پرتو متحرک دنبال موس */}
+      <div
+        className="pointer-events-none absolute rounded-full bg-pink-400/40 blur-[200px] transition-all duration-300"
+        style={{
+          top: pos.y - 250,
+          left: pos.x - 250,
+          width: "500px",
+          height: "500px",
+        }}
+      />
 
       <section className="relative mx-auto max-w-6xl px-6 py-20">
         {/* هدر */}
@@ -56,15 +77,15 @@ export default function Home() {
           <span className="inline-block rounded-full border border-white/20 px-4 py-1 text-xs font-medium tracking-wide text-white/70 backdrop-blur-sm">
             مجموعه پروژه‌ها
           </span>
-          <h1 className="mt-6 text-5xl font-extrabold tracking-tight bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(0,255,255,0.5)]">
-            کارهای من — تکنولوژی مدرن
+          <h1 className="mt-6 text-5xl font-extrabold tracking-tight bg-gradient-to-r from-green-400 via-yellow-300 to-purple-500 bg-clip-text text-transparent drop-shadow-[0_0_40px_rgba(255,255,200,0.8)]">
+            کارهای من — تکنولوژی نئونی
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base leading-7 text-white/70">
-            طراحی تاریک و نئونی با تمرکز روی تجربه‌ی کاربری.  
+            طراحی **Dark + Neon** با شدت بالا و افکت‌های داینامیک.  
             تمامی کدها در ریپازیتوری{" "}
             <a
               href="https://github.com/Mohsen-malekifard/My-projects-2025"
-              className="font-semibold text-green-400 hover:underline"
+              className="font-semibold text-yellow-300 hover:underline"
               target="_blank"
             >
               GitHub.com/Mohsen-malekifard/My-projects-2025
@@ -79,7 +100,7 @@ export default function Home() {
             <li key={p.href}>
               <Link
                 href={p.href}
-                className="group block rounded-2xl border border-white/10 bg-white/5 p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(255,255,0,0.25)] hover:border-yellow-400/40"
+                className="group block rounded-2xl border border-white/10 bg-white/10 p-6 shadow-lg backdrop-blur-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(255,255,100,0.6)] hover:border-yellow-400/40"
               >
                 <div className="flex items-start justify-between">
                   <h3 className="text-lg font-semibold tracking-tight text-white group-hover:text-yellow-300">
@@ -96,13 +117,13 @@ export default function Home() {
                   {p.tags.map((t) => (
                     <span
                       key={t}
-                      className="rounded-full bg-gradient-to-r from-yellow-400/20 to-purple-400/20 px-3 py-1 text-[11px] font-medium text-yellow-200"
+                      className="rounded-full bg-gradient-to-r from-yellow-400/30 to-purple-400/30 px-3 py-1 text-[11px] font-medium text-yellow-200"
                     >
                       {t}
                     </span>
                   ))}
                 </div>
-                <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-yellow-400/40 to-transparent opacity-75" />
+                <div className="mt-5 h-px w-full bg-gradient-to-r from-transparent via-yellow-400/50 to-transparent opacity-75" />
                 <div className="mt-3 text-sm font-medium text-yellow-300 underline-offset-4 group-hover:underline">
                   رفتن به پروژه →
                 </div>
@@ -119,7 +140,7 @@ export default function Home() {
           </div>
           <Link
             href="/"
-            className="rounded-lg border border-white/10 bg-white/5 px-3 py-1.5 font-medium text-white/80 backdrop-blur-sm hover:border-yellow-400/40 hover:text-yellow-300"
+            className="rounded-lg border border-white/10 bg-white/10 px-3 py-1.5 font-medium text-white/80 backdrop-blur-sm hover:border-yellow-400/40 hover:text-yellow-300"
           >
             صفحه اصلی
           </Link>
@@ -130,22 +151,22 @@ export default function Home() {
       <style jsx global>{`
         @keyframes float-strong {
           0% { transform: translateY(0px) scale(1); }
-          50% { transform: translateY(-120px) scale(1.25); }
+          50% { transform: translateY(-150px) scale(1.4); }
           100% { transform: translateY(0px) scale(1); }
         }
         @keyframes pulse-strong {
-          0%, 100% { opacity: 0.3; transform: scale(1); }
-          50% { opacity: 0.8; transform: scale(1.4); }
+          0%, 100% { opacity: 0.4; transform: scale(1); }
+          50% { opacity: 0.95; transform: scale(1.6); }
         }
         @keyframes glow {
-          0%, 100% { opacity: 0.25; transform: scale(1); }
-          50% { opacity: 0.7; transform: scale(1.3); }
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 1; transform: scale(1.4); }
         }
         .animate-float-strong {
-          animation: float-strong 15s ease-in-out infinite;
+          animation: float-strong 14s ease-in-out infinite;
         }
         .animate-pulse-strong {
-          animation: pulse-strong 12s ease-in-out infinite;
+          animation: pulse-strong 10s ease-in-out infinite;
         }
         .animate-glow {
           animation: glow 8s ease-in-out infinite;
