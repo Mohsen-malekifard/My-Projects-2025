@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className = 'mt-10'>
+      <body>
         <TodoProvider>
           {children}
         </TodoProvider>
