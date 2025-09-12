@@ -1,5 +1,4 @@
 
-import "./globals.css";
 import { TodoProvider } from "./context/TodoContext";
 
 
