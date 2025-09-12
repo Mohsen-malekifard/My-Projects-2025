@@ -92,6 +92,15 @@ export default function NavBar() {
             </li>
             <li>
               <Link
+                href="/TodoApp-2"
+                className="block px-3 py-2 rounded font-medium text-white hover:bg-yellow-400/20 transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Todo App 2
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="https://example-mongodb-apps.vercel.app/"
                 className="block px-3 py-2 rounded font-medium text-white hover:bg-yellow-400/20 transition-colors"
                 onClick={() => setOpen(false)}
