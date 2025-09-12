@@ -16,6 +16,12 @@ const projects = [
     tags: ["React", "Context", "Tailwind"],
   },
   {
+    href: "/TodoApp-2",
+    title: "Todo App 2",
+    desc: "مدیریت کارها با Context و استایل تمیز، انیمیشن‌های هاور و تایپوگرافی خوانا.",
+    tags: ["React", "Context", "Tailwind"],
+  },
+  {
     href: "/Shop",
     title: "فروشگاه Next.js",
     desc: "جستجو، جزئیات محصول، سبد خرید و قیمت کل—همه با ساختار app و استایل حرفه‌ای.",
