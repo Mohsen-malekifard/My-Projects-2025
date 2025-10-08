@@ -99,6 +99,10 @@ export default function Home() {
           </p>
         </div>
 
+              
+				<div id="mediaad-Nk5gw" ></div>
+
+
         {/* لیست پروژه‌ها */}
         <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
